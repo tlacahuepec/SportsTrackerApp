@@ -8,6 +8,7 @@ buildscript {
         hilt_version = "2.28-alpha"
         retrofit_version = "2.9.0"
         okhttp_version = "4.8.1"
+        androidx_hilt_version = "1.0.0-alpha02"
     }
 
     repositories {

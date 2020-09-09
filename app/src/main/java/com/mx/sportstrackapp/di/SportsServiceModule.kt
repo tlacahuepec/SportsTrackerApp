@@ -18,7 +18,7 @@ object SportsServiceModule {
     @Singleton
     @Provides
     fun provideSportsDbService(
-        okHttpClient: OkHttpClient,
+        @SportsServiceClient okHttpClient: OkHttpClient,
         converterFactory: GsonConverterFactory
     ) = provideService(okHttpClient, converterFactory, SportsDbService::class.java)
 

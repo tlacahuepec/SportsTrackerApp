@@ -14,6 +14,7 @@ import javax.inject.Singleton
 @InstallIn(ApplicationComponent::class)
 object OkHttpClientModule {
 
+    @SportsServiceClient
     @Provides
     fun providePrivateOkHttpClient(
         upstreamClient: OkHttpClient
