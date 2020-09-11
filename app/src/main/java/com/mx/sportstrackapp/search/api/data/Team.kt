@@ -4,20 +4,20 @@ import com.google.gson.annotations.SerializedName
 
 data class Team(
     @field:SerializedName("idTeam")
-    private val id: String,
+    val id: String,
 
     @field:SerializedName("strTeam")
-    private val teamName: String,
+    val teamName: String,
 
     @field:SerializedName("strTeamShort")
-    private val teamNameShort: String,
+    val teamNameShort: String,
 
     @field:SerializedName("strAlternate")
-    private val teamNameAlternate: String,
+    val teamNameAlternate: String,
 
     @field:SerializedName("intFormedYear")
-    private val formedYear: String,
+    val formedYear: String,
 
     @field:SerializedName("strSport")
-    private val sport: String
+    val sport: String
 )
