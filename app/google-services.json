@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1093922122650",
+    "firebase_url": "https://sportstrackerapp-ec3db.firebaseio.com",
+    "project_id": "sportstrackerapp-ec3db",
+    "storage_bucket": "sportstrackerapp-ec3db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1093922122650:android:180ff68f1ba45427d7a823",
+        "android_client_info": {
+          "package_name": "com.mx.sportstrackapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1093922122650-i16demnskc438r3lh0ohog0toedf3dmj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt39LinMUzNl1xhtyVHq38NIlX4Kfm0Ig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1093922122650-i16demnskc438r3lh0ohog0toedf3dmj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

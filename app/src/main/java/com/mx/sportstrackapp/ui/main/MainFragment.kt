@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.mx.sportstrackapp.analytics.logSearch
 import com.mx.sportstrackapp.databinding.MainFragmentBinding
 import com.mx.sportstrackapp.ui.main.adapter.TeamResultsAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,6 +20,9 @@ class MainFragment : Fragment() {
 
     @Inject
     lateinit var teamResultsAdapter: TeamResultsAdapter
+
+    @Inject
+    lateinit var firebaseAnalytics: FirebaseAnalytics
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +38,9 @@ class MainFragment : Fragment() {
 
     private fun setupListeners(binding: MainFragmentBinding) {
         binding.button.setOnClickListener {
-            mainViewModel.onSearch(binding.textInputEditText.text.toString())
+            val teamName = binding.textInputEditText.text.toString()
+            firebaseAnalytics.logSearch(teamName)
+            mainViewModel.onSearch(teamName)
         }
     }
 
