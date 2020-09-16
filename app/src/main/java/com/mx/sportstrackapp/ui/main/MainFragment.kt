@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import com.google.android.gms.ads.AdRequest
 import com.google.firebase.analytics.FirebaseAnalytics
 import com.mx.sportstrackapp.analytics.logSearch
 import com.mx.sportstrackapp.databinding.MainFragmentBinding
@@ -33,7 +34,12 @@ class MainFragment : Fragment() {
         binding.viewModel = mainViewModel
         binding.recyclerviewTeams.adapter = teamResultsAdapter
         setupListeners(binding)
+        setupAds(binding)
         return binding.root
+    }
+
+    private fun setupAds(binding: MainFragmentBinding) {
+        binding.adView.loadAd(AdRequest.Builder().build())
     }
 
     private fun setupListeners(binding: MainFragmentBinding) {

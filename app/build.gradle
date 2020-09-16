@@ -70,6 +70,9 @@ dependencies {
     implementation "com.google.firebase:firebase-analytics:$firebaseAnalyticsVersion"
     implementation "com.google.firebase:firebase-core:$firebaseCoreVersion"
 
+    //Ads
+    implementation "com.google.android.gms:play-services-ads:$play_services_version"
+
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
