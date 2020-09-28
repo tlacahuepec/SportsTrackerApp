@@ -16,7 +16,7 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.mx.sportstrackapp.HiltTestRunner"
     }
 
     buildTypes {
@@ -74,7 +74,14 @@ dependencies {
     implementation "com.google.android.gms:play-services-ads:$play_services_version"
 
     testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
+    // Espresso
+    implementation "androidx.test.espresso:espresso-idling-resource:${espresso_version}"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation "androidx.test.espresso:espresso-core:${espresso_version}"
+    androidTestImplementation "androidx.test.espresso:espresso-contrib:${espresso_version}"
+    // Hilt testing dependency
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    // Make Hilt generate code in the androidTest folder
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 }

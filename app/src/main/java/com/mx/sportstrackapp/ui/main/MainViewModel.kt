@@ -9,6 +9,7 @@ import com.mx.sportstrackapp.search.api.Result
 import com.mx.sportstrackapp.search.api.SportsDbDataSource
 import com.mx.sportstrackapp.search.api.SportsServiceStatus
 import com.mx.sportstrackapp.search.api.data.Team
+import com.mx.sportstrackapp.util.EspressoIdlingResource
 import kotlinx.coroutines.launch
 
 class MainViewModel @ViewModelInject constructor(private val remoteDataSource: SportsDbDataSource) :
@@ -27,6 +28,7 @@ class MainViewModel @ViewModelInject constructor(private val remoteDataSource: S
     internal fun onSearch(teamName: String) {
         viewModelScope.launch {
             _status.value = SportsServiceStatus.LOADING
+            EspressoIdlingResource.increment()
             try {
                 remoteDataSource.searchTeamName(teamName).let {
                     when (it.status) {
@@ -35,9 +37,11 @@ class MainViewModel @ViewModelInject constructor(private val remoteDataSource: S
                     }
                 }
                 _status.value = SportsServiceStatus.DONE
+                EspressoIdlingResource.decrement()
             } catch (e: Exception) {
                 _teamList.value = ArrayList()
                 _status.value = SportsServiceStatus.ERROR
+                EspressoIdlingResource.decrement()
             }
         }
     }
